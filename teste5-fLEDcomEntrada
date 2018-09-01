@@ -1,0 +1,25 @@
+int ledPin = 13;
+int intervalo = 2000;
+int entrada = 1000;
+int anterior = 1000;
+
+void setup() {
+  // put your setup code here, to run once:
+  pinMode (ledPin, OUTPUT);
+
+  Serial.begin (9600);
+  Serial.println ("Digite o numero de segundos que durara o intervalo entre uma piscada e outra");
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  if (Serial.available() > 0 ) {
+    entrada  = Serial.parseInt ();
+  }
+  
+    intervalo = entrada;
+    digitalWrite (ledPin, HIGH);
+    delay (intervalo);
+    digitalWrite (ledPin, LOW);
+    delay (intervalo);
+    
