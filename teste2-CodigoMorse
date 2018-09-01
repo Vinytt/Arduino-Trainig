@@ -1,0 +1,142 @@
+int ledPin = 13;
+
+void espaco ()
+{
+  digitalWrite (ledPin, LOW);
+  delay (3000);
+}
+
+void ponto ()
+{
+  digitalWrite (ledPin, HIGH);
+  delay (500);
+  digitalWrite (ledPin, LOW);
+  delay (200); 
+}
+
+void linha ()
+{
+  digitalWrite (ledPin, HIGH);
+  delay (2000);
+  digitalWrite (ledPin, LOW);
+  delay (200);
+}
+
+void setup() {
+  // put your setup code here, to run once:
+
+  pinMode (ledPin, OUTPUT);
+
+ 
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  
+
+   //insert string:
+  char palavra[100];
+  palavra[1] = 'C';
+  palavra[2] = 'l';
+  palavra[3] = 'u';
+  palavra[4] = 'b';
+  palavra[5] = 'e';
+  palavra[6] = ' ';
+  palavra[7] = 'd';
+  palavra[8] = 'a';
+  palavra[9] = 's';
+  palavra[10] = ' ';
+  palavra[11] = 'W';
+  palavra[12] = 'i';
+  palavra[13] = 'n';
+  palavra[14] = 'x';
+  
+
+  for (int i = 1; i < 15; i++)
+  {
+    if (palavra[i] == 'a' || palavra[i] == 'A')
+    {
+      ponto ();
+      linha ();
+
+      espaco ();
+    }
+
+    if (palavra[i] == 'b' || palavra[i] == 'B')
+    {
+      linha();
+      ponto ();
+      ponto ();
+      ponto ();
+
+      espaco ();
+    }
+
+    if (palavra[i] == 'c' || palavra[i] == 'C')
+    {
+      linha ();
+      ponto ();
+      linha ();
+      ponto ();
+
+      espaco ();
+    }
+
+    if (palavra[i] == 'd' || palavra[i] == 'D')
+    {
+      linha ();
+      ponto ();
+      ponto ();
+
+      espaco ();
+    }
+
+    if (palavra[i] == 'i' || palavra[i] == 'I')
+    {
+      ponto ();
+      ponto ();
+
+      espaco ();
+    }
+
+    if (palavra[i] == 'n' || palavra[i] == 'N')
+    {
+      linha ();
+      ponto ();
+
+      espaco ();
+    }
+
+    if (palavra[i] == 's' || palavra[i] == 'S')
+    {
+      ponto ();
+      ponto ();
+      ponto ();
+
+      espaco ();
+    }
+
+    if (palavra[i] == 'w' || palavra[i] == 'W')
+    {
+      ponto ();
+      linha ();
+      linha ();
+
+      espaco ();
+    }
+
+    if (palavra[i] == 'y' || palavra[i] == 'Y')
+    {
+      linha ();
+      ponto ();
+      linha ();
+      linha ();
+
+      espaco ();
+    }
+  }
+
+  delay(10000);
+
+}
