@@ -1,0 +1,18 @@
+int entrada = 0;         // variavel global para salvar a entrada
+
+void setup() {
+  
+  Serial.begin(9600);
+  
+}
+
+void loop() {
+  if (Serial.available() > 0) { // ve se a comunicacao esta disponivel
+    entrada = Serial.read();    // le e salva o valor de entrada 
+    Serial.println (entrada);
+    if ( entrada % 2 == 0){
+     Serial.println("Entrada é par");
+    }
+    if ( entrada % 2 == 1) Serial.println("Entrada é impar"); 
+  }
+}
