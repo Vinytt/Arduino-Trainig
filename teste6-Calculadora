@@ -1,0 +1,63 @@
+char entrada;
+int primeiroValor;
+int segundoValor;
+float resultado;
+bool passou =0;
+
+//Serial.read le em forma de char
+
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin (9600);
+  Serial.println ("Digite um numero e aperte 'ENTER' ");
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  if (Serial.available() > 0){
+    //Serial.println ("Digite um numero e aperte 'ENTER' ");
+    if (passou == 0){
+      primeiroValor = Serial.read () - 48;
+      Serial.println (primeiroValor);
+      Serial.println ("Qual operacao vc deseja realizar? Soma (+), subtracao (-), divisao (/) ou multiplicacao (*) ? ");
+
+      entrada = Serial.read ();
+      Serial.print ("Valor da entrada:");
+      Serial.println (entrada);
+      passou = 1;
+    }
+    
+    if (entrada == '+'){ //soma
+      Serial.println ("Digite o segundo valor e aperte 'ENTER' ");
+      segundoValor = Serial.read ();
+      resultado = primeiroValor + segundoValor;
+      Serial.println ("O resultado e' : ");
+      Serial.print (resultado);
+    }
+  
+    else if (entrada == '-'){ //subtracao
+      Serial.println ("Digite o segundo valor e aperte 'ENTER' ");
+      segundoValor = Serial.read ();
+      resultado = primeiroValor - segundoValor;
+      Serial.println ("O resultado e' :");
+      Serial.print (resultado);
+    }
+  
+    else if (entrada == '/'){ //divisao
+      Serial.println ("Digite o segundo valor e aperte 'ENTER' ");
+      segundoValor = Serial.read ();
+      resultado = primeiroValor / segundoValor;
+      Serial.println ("O resultado e' :");
+      Serial.print (resultado);
+    }
+  
+    else if (entrada == '*'){ //multiplicacao
+      Serial.println ("Digite o segundo valor e aperte 'ENTER' ");
+      segundoValor = Serial.read ();
+      resultado = primeiroValor * segundoValor;
+      Serial.println ("O resultado e' :");
+      Serial.print (resultado);
+    }
+  }
+
+}
