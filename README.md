@@ -1,2 +1,2 @@
 # Arduino-Trainig
-Just the codes I'm implementing as I learn how to play with my baby arduino s2
+Apenas os códigos que tento implementar enquanto brinco com meu Arduino
